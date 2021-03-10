@@ -1,20 +1,23 @@
-// Easy Responsive Tabs Plugin
-// Author: Samson.Onna <Email : samson3d@gmail.com>
-(function ($) {
+(function($) {
     $.fn.extend({
-        easyResponsiveTabs: function (options) {
+        easyResponsiveTabs: function(options) {
             //Set the default values, use comma to separate the settings, example:
             var defaults = {
-                type: 'default', //default, vertical, accordion;
-                width: 'auto',
-                fit: true
-            }
-            //Variables
-            var options = $.extend(defaults, options);            
-            var opt = options, jtype = opt.type, jfit = opt.fit, jwidth = opt.width, vtabs = 'vertical', accord = 'accordion';
+                    type: 'default', //default, vertical, accordion;
+                    width: 'auto',
+                    fit: true
+                }
+                //Variables
+            var options = $.extend(defaults, options);
+            var opt = options,
+                jtype = opt.type,
+                jfit = opt.fit,
+                jwidth = opt.width,
+                vtabs = 'vertical',
+                accord = 'accordion';
 
             //Main function
-            this.each(function () {
+            this.each(function() {
                 var $respTabs = $(this);
                 $respTabs.find('ul.resp-tabs-list li').addClass('resp-tab-item');
                 $respTabs.css({
@@ -43,7 +46,7 @@
                 $respTabs.find('.resp-tab-content').before("<h2 class='resp-accordion' role='tab'><span class='resp-arrow'></span></h2>");
 
                 var itemCount = 0;
-                $respTabs.find('.resp-accordion').each(function () {
+                $respTabs.find('.resp-accordion').each(function() {
                     $tabItemh2 = $(this);
                     var innertext = $respTabs.find('.resp-tab-item:eq(' + itemCount + ')').text();
                     $respTabs.find('.resp-accordion:eq(' + itemCount + ')').append(innertext);
@@ -54,7 +57,7 @@
                 //Assigning the 'aria-controls' to Tab items
                 var count = 0,
                     $tabContent;
-                $respTabs.find('.resp-tab-item').each(function () {
+                $respTabs.find('.resp-tab-item').each(function() {
                     $tabItem = $(this);
                     $tabItem.attr('aria-controls', 'tab_item-' + (count));
                     $tabItem.attr('role', 'tab');
@@ -66,7 +69,7 @@
 
                     //Assigning the 'aria-labelledby' attr to tab-content
                     var tabcount = 0;
-                    $respTabs.find('.resp-tab-content').each(function () {
+                    $respTabs.find('.resp-tab-content').each(function() {
                         $tabContent = $(this);
                         $tabContent.attr('aria-labelledby', 'tab_item-' + (tabcount));
                         tabcount++;
@@ -75,14 +78,14 @@
                 });
 
                 //Tab Click action function
-                $respTabs.find("[role=tab]").each(function () {
+                $respTabs.find("[role=tab]").each(function() {
                     var $currentTab = $(this);
-                    $currentTab.click(function () {
+                    $currentTab.click(function() {
 
                         var $tabAria = $currentTab.attr('aria-controls');
 
                         if ($currentTab.hasClass('resp-accordion') && $currentTab.hasClass('resp-tab-active')) {
-                            $respTabs.find('.resp-tab-content-active').slideUp('', function () { $(this).addClass('resp-accordion-closed'); });
+                            $respTabs.find('.resp-tab-content-active').slideUp('', function() { $(this).addClass('resp-accordion-closed'); });
                             $currentTab.removeClass('resp-tab-active');
                             return false;
                         }
@@ -100,7 +103,7 @@
                         }
                     });
                     //Window resize function                   
-                    $(window).resize(function () {
+                    $(window).resize(function() {
                         $respTabs.find('.resp-accordion-closed').removeAttr('style');
                     });
                 });
@@ -108,4 +111,3 @@
         }
     });
 })(jQuery);
-
