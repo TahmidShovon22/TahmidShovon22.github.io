@@ -1,3 +1,29 @@
+div.dd {
+    /*position: relative; /* IE is dumb */
+    display: block;
+    float: left;
+    width: 100%;
+    height: 1em;
+    background: #fff;
+}
+
+div.dd div.blue {
+    /*position: relative; */
+    background: #00a78e;
+    height: 1em;
+    text-align: left;
+    display: block;
+    float: left;
+}
+
+
+/*--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+--*/
+
 html,
 body {
     font-family: 'Open Sans', sans-serif;
@@ -26,25 +52,27 @@ h6 {
 /*-- header --*/
 
 #home {
-    background: url(../images/header-bg.jpg) no-repeat center top;
+    background-color: #1b242f;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     -ms-background-size: cover;
-    min-height: 620px;
+    min-height: 650px;
     position: relative;
 }
 
 .top-header {
-    padding: 0 0;
+    padding: 2em 0;
 }
 
 .logo h1 {
-    margin: 0;
     text-transform: uppercase;
     font-weight: bold;
     color: #fff;
+    position: fixed;
+    z-index: 1000;
+    background-color: #1b242f;
 }
 
 .logo h1 a {
@@ -53,9 +81,9 @@ h6 {
 }
 
 .logo span {
-    border: 7px solid #00a78e;
-    padding: 0px 14px;
-    font-size: 1.2em;
+    border: 5px solid #00a78e;
+    padding: 0px 12px;
+    font-size: 0.75em;
     color: #fff;
 }
 
@@ -119,23 +147,12 @@ span.menu {
     max-width: 100%;
 }
 
-.nav-bg {
-    background-color: rgba(23, 20, 20, 1);
-    padding-top: 2em;
-    height: 100px;
-    width: 100%;
-    padding-right: 89.5px;
-    position: fixed;
-    z-index: 1000;
-}
-
 
 /*--banner-info--*/
 
 .banner-info {
     background: rgba(23, 20, 20, 0.58);
-    margin-top: 2em;
-    height: 400px;
+    margin-top: 4em;
 }
 
 .header-left {
@@ -155,8 +172,8 @@ ul.address {
 }
 
 .header-left img {
-    padding-left: 80px;
     width: 100%;
+    margin-top: 19px;
 }
 
 .header-right {
@@ -223,8 +240,8 @@ ul.address {
 }
 
 ul.address {
-    margin-top: 1.5em;
-    border-top: 1px solid #00a78e;
+    margin-top: 2em;
+    border-top: 1px solid #AFAFAF;
     padding-top: 0.5em;
 }
 
@@ -523,7 +540,7 @@ span.border.one:after {
 }
 
 .about-left-grid h2 {
-    color: #ffffff;
+    color: #00a78e;
     font-size: 2em;
 }
 
@@ -552,9 +569,9 @@ span.border.one:after {
 }
 
 .about-left {
-    padding: 0.5em 0 0.5em 0;
+    padding: 4.5em 0 4.7em 0;
     float: right;
-    background: #1c242f;
+    background: #1b242f;
 }
 
 .about-left-grid ul li a {
@@ -581,10 +598,10 @@ span.border.one:after {
 }
 
 .about-right {
-    width: 500px;
-    float: center;
-    background: url(../images/about-pic.jpg);
-    height: 500px;
+    float: left;
+    padding: 0;
+    background: url(../images/about-pic.jpg) no-repeat 0px 0px;
+    min-height: 580px;
     background-size: cover;
     -o-background-size: cover;
     -webkit-background-size: cover;
@@ -678,7 +695,7 @@ span.border.one:after {
 
 .wthree_about_right_grid_right p {
     margin: 1em 0 0;
-    color: #ffffff;
+    color: #586371;
     line-height: 1.9em;
     font-size: 0.9em;
 }
@@ -689,11 +706,6 @@ span.border.one:after {
 
 .wthree_about_right_grid:nth-child(2) {
     margin-bottom: 2em;
-}
-
-
-/*img {
-    border-radius: 50%;
 }
 
 
@@ -810,12 +822,12 @@ span.border.one:after {
 .timeline>li>.timeline-panel {
     width: calc( 100% - 75px);
     float: right;
-    border: 1px solid rgba(23, 20, 20, 0.58);
+    border: 1px solid #d4d4d4;
     padding: 15px 15px;
     position: relative;
     -webkit-box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
-    background: rgba(23, 20, 20, 0.58);
+    background: #fff;
     border-bottom: 5px solid #00a78e;
 }
 
@@ -833,7 +845,7 @@ h4.timeline-title a:hover {
     font-size: 0.9em;
     margin: 0;
     padding: 0;
-    color: rgb(255, 255, 255);
+    color: #777;
     line-height: 1.9em;
 }
 
@@ -855,8 +867,8 @@ h4.timeline-title a:hover {
     left: -14px;
     display: inline-block;
     border-top: 14px solid transparent;
-    border-right: 14px solid #00a78e;
-    border-left: 0 solid #00a78e;
+    border-right: 14px solid #fff;
+    border-left: 0 solid #fff;
     border-bottom: 14px solid transparent;
     content: " ";
 }
@@ -905,7 +917,7 @@ h4.timeline-title a:hover {
 }
 
 h4.timeline-title {
-    color: #ffffff;
+    color: #1b242f;
     font-size: 1.2em;
     font-weight: 600;
 }
@@ -1443,31 +1455,11 @@ span.border.two:after {
     left: 65px;
 }
 
-div.dd {
-    /*position: relative; /* IE is dumb */
-    display: block;
-    float: left;
-    width: 500px;
-    height: 16px;
-    margin: 0 0 2px;
-    background: #fff;
-}
-
-div.dd div.blue {
-    /*position: relative; */
-    background: #00a78e;
-    height: 16px;
-    width: 75%;
-    text-align: right;
-    display: block;
-    float: left;
-}
-
 
 /*-- footer --*/
 
 .footer {
-    background-color: #1b242f;
+    background: url(../images/contact.jpeg) no-repeat center top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1585,7 +1577,6 @@ div.dd div.blue {
     .about-left-grid p {
         font-size: 0.9em;
         line-height: 2em;
-        margin-top: 0.5em;
     }
 }
 
@@ -1673,7 +1664,7 @@ div.dd div.blue {
     .about-left {
         padding: 3em 0 3em 0;
         float: none;
-        background: #1c242f;
+        background: #1b242f;
     }
     .about-left-grid {
         width: 80%;
