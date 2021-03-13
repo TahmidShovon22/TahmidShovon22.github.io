@@ -1273,7 +1273,8 @@ div#portfolioModal10 {
     top: 25px;
     right: 25px;
     width: 45px;
-    height: 45px background-color: transparent;
+    height: 45px;
+    background-color: transparent;
     cursor: pointer;
     z-index: 1;
 }
@@ -1459,7 +1460,6 @@ span.border.two:after {
 /*-- footer --*/
 
 .footer {
-    background: url(../images/contact.jpeg) no-repeat center top;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
